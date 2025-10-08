@@ -82,24 +82,32 @@ The dataset must adhere to the standard **Instruction Tuning** structure for the
 
 This table details the specific hyperparameters used for the PEFT (MixLoRA) and the SFTTrainer configuration.
 
-| Category | Parameter | Value | Description |
-| :--- | :--- | :--- | :--- |
-| **LoRA Config** | `r` | `8` | LoRA attention dimension (rank). |
-| | `alpha` | `16` | LoRA scaling parameter. |
-| | `lora_dropout` | `0.05` | Dropout probability for LoRA layers. |
-| | `bias` | `"none"` | Bias type for LoRA layers. |
-| | `task_type` | `"CAUSAL_LM"` | Specifies the task type for the model. |
-| | `target_modules` | `["q_proj", "v_proj", "k_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]` | List of module names to apply LoRA adapters to. |
-| **Training Args** | `output_dir` | `./mistral-mixlora-finetune-3` | Directory for saving checkpoints. |
-| | `per_device_train_batch_size` | `2` | Batch size per GPU/device. |
-| | `gradient_accumulation_steps` | `8` | Number of steps to accumulate gradients. |
-| | `learning_rate` | `2.00E-02` | Peak learning rate. |
-| | `logging_steps` | `10` | Log training metrics every N steps. |
-| | `gradient_checkpointing` | `True` | Reduces memory consumption. |
-| | `epoch` | `1` | Total number of training epochs executed. |
-| | `date` | `6/10/2025` | Date of the training run. |
-| | `report_to` | `wandb` | Integration for logging metrics. |
+### ⚙️ LoRA Configuration Parameters (PEFT)
 
+This table details the specific hyperparameters used for the Parameter-Efficient Fine-Tuning (PEFT) with MixLoRA.
+
+| Parameter | Value | Description |
+| :--- | :--- | :--- |
+| `r` | `8` | LoRA attention dimension (rank). |
+| `alpha` | `16` | LoRA scaling parameter. |
+| `lora_dropout` | `0.05` | Dropout probability for LoRA layers. |
+| `bias` | `"none"` | Bias type for LoRA layers. |
+| `task_type` | `"CAUSAL_LM"` | Specifies the task type for the model. |
+| `target_modules` | `["q_proj", "v_proj", "k_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]` | List of module names to apply LoRA adapters to. |
+### ⚙️ Training Arguments (SFTTrainer)
+
+This table summarizes the settings used for the Supervised Fine-Tuning (SFT) Trainer.
+
+| Parameter | Value | Description |
+| :--- | :--- | :--- |
+| `output_dir` | `./mistral-mixlora-finetune-3` | Directory for saving checkpoints. |
+| `per_device_train_batch_size` | `2` | Batch size per GPU/device. |
+| `gradient_accumulation_steps` | `8` | Number of steps to accumulate gradients. |
+| `learning_rate` | `2.00E-02` | Peak learning rate. |
+| `logging_steps` | `10` | Log training metrics every N steps. |
+| `gradient_checkpointing` | `True` | Reduces memory consumption. |
+| `epoch` | `1` | Total number of training epochs executed. |
+| `report_to` | `wandb` | Integration for logging metrics. |
 ## 📈 Training Performance and Results
 
 This table summarizes the key performance metrics and hardware utilization from the training run.
