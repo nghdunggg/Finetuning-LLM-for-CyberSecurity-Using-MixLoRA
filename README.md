@@ -1,7 +1,5 @@
-# Large Language Model (LLM) Fine-tuning Project
-
+# Large Language Model (LLM) Fine-tuning for Cyber Security
 ---
-
 This project outlines a comprehensive process for **Fine-tuning** a Large Language Model (LLM) from the Hugging Face Hub. It leverages advanced libraries such as **Transformers**, **PEFT** (Parameter-Efficient Fine-Tuning), and **TRL** (Transformer Reinforcement Learning) to optimize performance and memory usage during training.
 
 The core file of this project is **`main.ipynb`**, which is best executed in a **Google Colab** or **Jupyter Notebook** environment with GPU support.
