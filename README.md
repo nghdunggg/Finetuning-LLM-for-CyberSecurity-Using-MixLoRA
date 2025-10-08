@@ -78,3 +78,21 @@ The dataset must adhere to the standard **Instruction Tuning** structure for the
     * Set the Base Model name.
     * Ensure your **PEFT** configuration specifies parameters for **MixLoRA** (e.g., identifying `target_modules` or specific LoRA strategies if the PEFT library directly supports MixLoRA).
 3.  **Start Training:** Run the code cell that initializes the **TRL SFTTrainer** and begins the training process with the prepared dataset.
+## 📊 Training Configuration and Results Summary
+
+The following table summarizes the key hyperparameters used for MixLoRA fine-tuning and the core results achieved after the first epoch.
+
+| Category | Parameter | Value | Result | Metric | Value |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **LoRA Config** | `r` | `8` | **Training Arguments** | `output_dir` | `./mistral-mixlora-finetune-3` |
+| | `alpha` | `16` | | `per_device_train_batch_size` | `2` |
+| | `lora_dropout` | `0.05` | | `gradient_accumulation_steps` | `8` |
+| | `bias` | `"none"` | | `learning_rate` | `2.00E-02` |
+| | `task_type` | `"CAUSAL_LM"` | | `logging_steps` | `10` |
+| | `target_modules` | `["q_proj", "v_proj", "k_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]` | | `gradient_checkpointing` | `True` |
+| **Training Run** | `date` | `6/10/2025` | **Performance** | `training loss` | `1.205274` |
+| | `report_to` | `wandb` | | `duration` | `3259.1194 seconds` |
+| | `epoch` | `1` | | `GPU used` | `approx 22 - 23 GiB` |
+| | `epoch_progress` | `0.0434` | | `train_samples_per_second` | `0.736` |
+| | | | | `train_steps_per_second` | `0.092` |
+| | | | | `total_flos` | `1.13E+16` |
