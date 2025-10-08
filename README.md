@@ -45,7 +45,7 @@ Run the initial code cells in `main.ipynb` to install the necessary packages:
 ```
 ### 2. Hardware Requirements **(CRITICAL)**
 
-* **Mandatory GPU:** This project requires a high-performance GPU. The fine-tuning process has been successfully tested on GPUs with **VRAM > 20GB** (e.g., NVIDIA A10, A40, A100, or V100).
+* **Mandatory GPU:** This project requires a high-performance GPU. The fine-tuning process has been tested on GPUs with **VRAM > 20GB** (e.g., NVIDIA A10, A40, A100, or V100).
 * **Memory:** A minimum of $12 \text{GB VRAM}$ is necessary when using QLoRA for $7 \text{B}$ models. However, to handle $13 \text{B}$ or $70 \text{B}$ models with large batch sizes, VRAM exceeding $20 \text{GB}$ is ideal.
 
 ### 3. Hugging Face Configuration (Optional)
