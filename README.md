@@ -21,9 +21,7 @@ To run the notebook successfully, you must install the necessary Python librarie
 Open the `main.ipynb` file and execute the initial cells to install the required packages.
 
 ```bash
-%pip install transformers peft datasets accelerate bitsandbytes
-%pip install -U trl
-%pip install -U transformers peft trl accelerate
+%pip install transformers peft datasets trl accelerate bitsandbytes
 ```
 
 ### 2. Hardware and Environment
